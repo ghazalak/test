@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+    <StackLayout BackgroundColor="White" Padding="60" VerticalOptions="Center">
+        <Entry HeightRequest="40" VerticalOptions="FillAndExpand" Placeholder="نام"></Entry>
+        <Entry HeightRequest="40" VerticalOptions="FillAndExpand" Placeholder="نام خانوادگی"></Entry>
+        <Picker Title="sex" >
+            <Picker.Items>
+                <x:String>مذکر</x:String>
+                <x:String>مونث</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker Title="تحصیلات">
+            <Picker.Items>
+                <x:String>بیکار</x:String>
+                <x:String>کارمند</x:String>
+                <x:String>کارفرما</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Second Page" BackgroundColor="Blue" Clicked="NavigateButton_OnClicked">
+        </Button>
+    </StackLayout>
+    <!--    <ContentPage.Content>
+        <StackLayout Spacing="10" x:Name="layout">
+            <Button Text="StackLayout" VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand" />
+            <BoxView Color="Yellow" VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" />
+            <BoxView HeightRequest="75" Color="Blue" VerticalOptions="End"
+                     HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+    -->
+    <!--	<Label Text="Welcome to Xamarin Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+-->
+</ContentPage>
