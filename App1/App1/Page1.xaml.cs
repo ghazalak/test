@@ -10,15 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace App1
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Page2 : ContentPage
+	public partial class Page1 : ContentPage
 	{
-		public Page2 ()
+		public Page1 ()
 		{
 			InitializeComponent ();
 		}
 	    private async void NavigateButton_OnClicked(object sender, EventArgs e)
 	    {
-	        await Navigation.PushAsync(new Page1());
+	        await Navigation.PushAsync(new MainPage());
 	    }
     }
 }

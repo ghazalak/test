@@ -2,9 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Page2">
-    <StackLayout BackgroundColor="White" Padding="60" VerticalOptions="Center">
-        <BoxView Color="Red" HeightRequest="50" WidthRequest="50" ></BoxView>
-        <Button Text="Main Page" BackgroundColor="Blue" Clicked="NavigateButton_OnClicked">
+   <RelativeLayout BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        <Entry HeightRequest="40" Placeholder="نام" x:Name="name"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.4, Constant=20}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}"></Entry>
+        <Entry HeightRequest="40"  Placeholder="نام خانوادگی" 
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.4, Constant=20}"
+               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=name, Property=Width, Factor=1.05}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"></Entry>
+        <Picker Title="جنسیت" WidthRequest="120" x:Name="sex" HorizontalOptions="Center"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=name, Property=Height,Factor=1}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.35}">
+            <Picker.Items>
+                <x:String>مذکر</x:String>
+                <x:String>مونث</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker Title="تحصیلات" x:Name="degree" HorizontalOptions="Center" WidthRequest="120"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=sex, Property=Height,Factor=2}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.35}">            
+            <Picker.Items>
+                <x:String>بیکار</x:String>
+                <x:String>کارمند</x:String>
+                <x:String>کارفرما</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="صفحه سوم" BackgroundColor="Blue" Clicked="NavigateButton_OnClicked"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=degree, Property=Height,Factor=3}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.35}">        
         </Button>
-    </StackLayout>
+    </RelativeLayout>
 </ContentPage>
+<!--     
+  
+   <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <BoxView Color="Blue" HeightRequest="80" WidthRequest="50"
+                 RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+        <BoxView Color="Red" HeightRequest="50" WidthRequest="50"
+                 RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+        <BoxView Color="Gray" WidthRequest="15" x:Name="pole"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.75}"
+                 RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .45}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .25}" />
+        <BoxView Color="Green"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.10, Constant=10}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.2, Constant=20}"
+                 RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=X, Constant=15}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pole, Property=Y, Constant=0}" />
+    </RelativeLayout>
+</ContentPage>
+    -->
